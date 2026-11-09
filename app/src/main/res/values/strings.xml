@@ -1,3 +1,228 @@
 <resources>
     <string name="app_name">SharedExpenses</string>
+
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="done">Done</string>
+    <string name="nav_row">%1$s ›</string>
+    <string name="title_amount">%1$s · %2$s</string>
+    <string name="save_changes">Save changes</string>
+    <string name="you_are_owed">You are owed %1$s</string>
+    <string name="you_owe">You owe %1$s</string>
+    <string name="settled_up">You are settled up</string>
+    <string name="name_you">%1$s (you)</string>
+    <plurals name="members_count">
+        <item quantity="one">%d member</item>
+        <item quantity="other">%d members</item>
+    </plurals>
+    <plurals name="people_count">
+        <item quantity="one">%d person</item>
+        <item quantity="other">%d people</item>
+    </plurals>
+
+    <!-- Fields -->
+    <string name="field_name">Name</string>
+    <string name="field_email">Email</string>
+    <string name="field_phone">Phone</string>
+    <string name="field_password">Password</string>
+    <string name="field_group_name">Group name</string>
+    <string name="field_description">Description</string>
+    <string name="field_expense_name">Expense name</string>
+    <string name="field_amount">Amount (DKK)</string>
+
+    <!-- Auth (lo-fi 01-03) -->
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_headline">Split expenses.\nKeep friends.</string>
+    <string name="welcome_body">Track shared costs and see who owes what.</string>
+    <string name="create_account">Create account</string>
+    <string name="log_in">Log in</string>
+    <string name="demo_mock_note">Demo uses mock accounts and data.</string>
+    <string name="demo_auth_note">Demo authentication - no real credentials. Demo account: alex@example.com / password</string>
+    <string name="create_profile">Create profile</string>
+    <string name="error_wrong_login">Wrong email or password.</string>
+    <string name="error_missing_fields">Name, email and password are required.</string>
+    <string name="error_email_taken">An account with this email already exists.</string>
+
+    <!-- Bottom bar -->
+    <string name="tab_groups">Groups</string>
+    <string name="tab_activity">Activity</string>
+    <string name="tab_profile">Profile</string>
+
+    <!-- Home (lo-fi 04) -->
+    <string name="my_groups">My groups</string>
+    <string name="across_groups">Across your groups</string>
+    <string name="your_groups">Your groups</string>
+    <string name="no_groups">You are not in any groups yet.</string>
+    <string name="group_row">%1$s · %2$s</string>
+    <string name="create_group_button">+ Create group</string>
+
+    <!-- Sync feedback (NF03, NF04) -->
+    <string name="banner_all_synced">All synced up</string>
+    <string name="banner_offline_title">Offline · Showing saved data</string>
+    <string name="banner_offline_body">Your groups and history are still available.</string>
+    <string name="banner_retrying_title">Some changes could not sync</string>
+    <string name="banner_retry_now">Retry now</string>
+    <string name="banner_saving_title">Saving…</string>
+    <plurals name="banner_queued">
+        <item quantity="one">%d change is queued and will be retried in the background.</item>
+        <item quantity="other">%d changes are queued and will be retried in the background.</item>
+    </plurals>
+    <plurals name="banner_saving">
+        <item quantity="one">Sending %d change. You can keep using the app.</item>
+        <item quantity="other">Sending %d changes. You can keep using the app.</item>
+    </plurals>
+    <string name="status_pending">Pending</string>
+    <string name="status_synced">Saved</string>
+    <string name="status_failed">Failed · retrying</string>
+
+    <!-- Create / edit group, members (lo-fi 05, 07, 18) -->
+    <string name="create_group">Create group</string>
+    <string name="edit_group">Edit group</string>
+    <string name="group_members">Group members</string>
+    <string name="find_people">Find people</string>
+    <string name="search_name_email">Search name or email</string>
+    <string name="selected_members">Selected members</string>
+    <string name="save_members">Save members</string>
+    <string name="remove_member_note">Removing a member keeps their existing expenses in the history.</string>
+
+    <!-- Group overview (lo-fi 06) -->
+    <string name="your_balance">Your balance</string>
+    <string name="expenses">Expenses</string>
+    <string name="balances_row">Balances · %1$s</string>
+    <string name="group_settings">Group settings</string>
+    <string name="recent_expenses">Recent expenses</string>
+    <string name="add_expense_button">+ Add expense</string>
+    <string name="expense_sub">%1$s paid · split between %2$s · %3$s</string>
+
+    <!-- Expenses & history (lo-fi 08) -->
+    <string name="expenses_history">Expenses &amp; history</string>
+    <string name="all_activity_in">%1$s · All activity</string>
+    <string name="no_expenses">No expenses yet.</string>
+
+    <!-- Add expense flow (lo-fi 09, 10, 20, 21) -->
+    <string name="add_expense">Add expense</string>
+    <string name="paid_by">Paid by: %1$s ▾</string>
+    <string name="split_all">Split: All %1$d members ▾</string>
+    <string name="split_selected">Split: %1$d selected ▾</string>
+    <string name="attach_receipt_optional">+ Attach receipt (optional)</string>
+    <string name="receipt_attached">Receipt attached ✓</string>
+    <string name="equal_share">Equal share: %1$s per person</string>
+    <string name="save_expense">Save expense</string>
+    <string name="error_expense_form">Enter a name, a valid amount and at least one participant.</string>
+    <string name="choose_payer">Choose payer</string>
+    <string name="who_paid">Who paid for %1$s?</string>
+    <string name="this_expense">this expense</string>
+    <string name="split_expense">Split expense</string>
+    <plurals name="all_members_people">
+        <item quantity="one">All members · %d person</item>
+        <item quantity="other">All members · %d people</item>
+    </plurals>
+    <string name="apply_split">Apply split</string>
+    <string name="select_one_participant">Select at least one participant.</string>
+    <string name="attach_receipt">Attach receipt</string>
+    <string name="receipt_preview">Receipt preview</string>
+    <string name="mock_receipt_image">[Mock receipt image]</string>
+    <string name="no_receipt">No receipt attached</string>
+    <string name="no_camera_note">No camera or real upload in this demo.</string>
+    <string name="use_mock_receipt">Use mock receipt</string>
+    <string name="remove_receipt">Remove receipt</string>
+
+    <!-- Expense status (lo-fi 19, 23, 24, 25) -->
+    <string name="expense_pending">Expense pending</string>
+    <string name="saving_expense">Saving expense…</string>
+    <string name="pending_keep_using">Pending · You can keep using the app.</string>
+    <string name="demo_simulate_failure">Demo: simulate network failure</string>
+    <string name="continue_to_group">Continue to group</string>
+    <string name="offline_retry_queued">Offline / retry queued</string>
+    <string name="background_retry">Background retry</string>
+    <string name="offline_showing_saved">Offline · Showing saved data</string>
+    <string name="offline_saved_body">Your groups and history are still available.</string>
+    <string name="could_not_sync">Expense could not sync</string>
+    <string name="could_not_sync_body">Saved on this device. Automatic retry queued. Excluded from shared balances until synced.</string>
+    <string name="queued_until_online">Saved on this device. It will be sent automatically when you are back online.</string>
+    <string name="demo_connection_restored">Demo: connection restored</string>
+    <string name="reconnecting_body">Retrying %1$s in the background. No action needed - you can keep browsing.</string>
+    <string name="browse_saved_history">Browse saved history</string>
+    <string name="expense_saved">Expense saved</string>
+    <string name="back_online_saved">Back online · Expense saved</string>
+    <string name="previously_failed_synced">Your previously failed %1$s expense (%2$s) synced successfully.</string>
+    <string name="balances_updated">Group balances updated. Members notified.</string>
+    <string name="view_expenses">View expenses</string>
+
+    <!-- Expense details (lo-fi 11) -->
+    <string name="expense_details">Expense details</string>
+    <string name="paid_by_on">Paid by %1$s · %2$s</string>
+    <string name="split_title">Split</string>
+    <string name="receipt">Receipt</string>
+    <string name="back_to_history">Back to history</string>
+    <string name="saved_members_notified">Saved · Members notified</string>
+
+    <!-- Balances (lo-fi 12) -->
+    <string name="balances_debts">Balances &amp; debts</string>
+    <string name="your_position">Your position</string>
+    <plurals name="excluded_unsynced">
+        <item quantity="one">%d expense is not synced yet and is not included below.</item>
+        <item quantity="other">%d expenses are not synced yet and are not included below.</item>
+    </plurals>
+    <string name="suggested_settlements">Suggested settlements</string>
+    <string name="everyone_settled">Everyone is settled up.</string>
+    <string name="owes_you_remind">%1$s owes you %2$s · Remind</string>
+    <string name="you_owe_person">You owe %1$s %2$s</string>
+    <string name="person_owes_person">%1$s owes %2$s %3$s</string>
+    <string name="how_calculated">How this is calculated</string>
+    <string name="how_calculated_body">Each person\'s balance is what they paid minus their share of every expense. People who owe the most pay the people who are owed the most.</string>
+    <string name="net_plus">%1$s: +%2$s</string>
+    <string name="net_minus">%1$s: -%2$s</string>
+    <string name="net_zero">%1$s: 0 DKK</string>
+
+    <!-- Reminder (lo-fi 13, 22) -->
+    <string name="send_reminder">Send reminder</string>
+    <string name="reminder_to">To %1$s · %2$s</string>
+    <string name="outstanding">%1$s outstanding</string>
+    <string name="message_preview">Message preview</string>
+    <string name="reminder_message">Hi %1$s, you owe %2$s %3$s for %4$s. Please settle up.</string>
+    <string name="reminder_sent_title">Reminder sent</string>
+    <string name="reminder_sent_body">%1$s has been notified about %2$s.</string>
+    <string name="reminder_sending_title">Sending reminder…</string>
+    <string name="reminder_sending_body">You can keep using the app.</string>
+    <string name="reminder_queued_title">Reminder queued</string>
+    <string name="reminder_queued_body">Could not send right now. It will be sent automatically when the connection is back.</string>
+    <string name="back_to_balances">Back to balances</string>
+
+    <!-- Activity (lo-fi 14) -->
+    <string name="activity">Activity</string>
+    <string name="recent_activity">Recent activity</string>
+    <string name="waiting_to_sync">Waiting to sync</string>
+    <string name="request_status">%1$s · %2$s</string>
+    <string name="no_activity">No activity yet.</string>
+    <string name="sync_complete">Sync complete</string>
+    <string name="sync_complete_body">Your previously failed change was saved: %1$s · %2$s</string>
+    <string name="group_and_time">%1$s · %2$s</string>
+    <string name="activity_expense_added">%1$s added %2$s</string>
+    <string name="activity_group_created">%1$s created %2$s</string>
+    <string name="activity_members_updated">%1$s updated the members</string>
+    <string name="activity_reminder_sent">%1$s reminded %2$s</string>
+    <string name="mock_activity_note">Activity from other members is mock data.</string>
+
+    <!-- Profile (lo-fi 15, 16, 17) -->
+    <string name="my_profile">My profile</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="notification_settings">Notification settings</string>
+    <string name="log_out">Log out</string>
+    <string name="choose_activity">Choose which activity you hear about.</string>
+    <string name="notif_all">On · All group activity</string>
+    <string name="notif_mentions">Mentions only</string>
+    <string name="notif_off">Off</string>
+    <string name="notif_settings_note">This choice applies to group activity. Request and sync feedback stays visible.</string>
+
+    <!-- System notifications -->
+    <string name="channel_sync">Sync status</string>
+    <string name="channel_group">Group activity</string>
+    <string name="notif_synced_title">Back online · Saved</string>
+    <string name="notif_synced_body">Your previously failed change (%1$s) synced successfully.</string>
+    <string name="notif_synced_body_amount">Your previously failed %1$s expense (%2$s) synced successfully.</string>
+    <string name="notif_expense_title">Group members notified</string>
+    <string name="notif_expense_body">%1$s · %2$s was shared with the group.</string>
+    <string name="notif_reminder_title">Reminder delivered</string>
+    <string name="notif_reminder_body">%1$s was reminded about %2$s.</string>
 </resources>
