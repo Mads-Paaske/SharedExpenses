@@ -1,47 +1,37 @@
 package com.example.sharedexpenses
 
+import android.Manifest
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.LaunchedEffect
+import androidx.navigation.compose.rememberNavController
+import com.example.sharedexpenses.ui.navigation.AppNavigation
 import com.example.sharedexpenses.ui.theme.SharedExpensesTheme
 
+/** Entry point (Lecture 7). Wraps the whole app in our theme and starts the navigation graph (Lecture 9). */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             SharedExpensesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                RequestNotificationPermission()
+                AppNavigation(navController = rememberNavController())
             }
         }
     }
 }
 
+/** Android 13+ asks the user before an app may show notifications (F12, NF05). */
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SharedExpensesTheme {
-        Greeting("Android")
-    }
+private fun RequestNotificationPermission() {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return
+    val launcher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { }
+    LaunchedEffect(Unit) { launcher.launch(Manifest.permission.POST_NOTIFICATIONS) }
 }
